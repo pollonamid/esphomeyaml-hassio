@@ -4,7 +4,7 @@ FROM $BUILD_FROM
 ENV LANG C.UTF-8
 
 # Install requirements for add-on
-RUN apk add --no-cache python2 py2-pip git openssh libc6-compat && \
+RUN apk add --no-cache python2 py2-pip git openssh libc6-compat libstdc++ && \
     pip install --no-cache-dir platformio && \
     platformio platform install espressif8266 \
         --with-package tool-esptool \
